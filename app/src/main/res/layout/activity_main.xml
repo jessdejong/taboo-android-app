@@ -90,4 +90,10 @@
             android:src="@drawable/ic_settings_white_48dp" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/copyright"
+        android:textSize="20sp"/>
 </LinearLayout>
