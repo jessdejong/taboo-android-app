@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">taboo-android-app</string>
+    <string name="app_title">TABOO</string>
+    <string name="play_button_name">Play</string>
 </resources>
