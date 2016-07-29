@@ -4,5 +4,7 @@
     <string name="play_button_text">PLAY</string>
     <string name="how_to_play_button_text">HOW TO PLAY</string>
     <string name="copyright">© 2016 Jesse DeJong</string>
-    <string name="company_name">jesse843 | paradox studios</string>
+    <string name="store_icon_content_description">Store</string>
+    <string name="information_icon_content_description">Information</string>
+    <string name="settings_icon_content_description">Settings</string>
 </resources>
