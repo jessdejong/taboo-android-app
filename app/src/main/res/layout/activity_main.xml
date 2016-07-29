@@ -86,7 +86,8 @@
             android:shadowDx="0"
             android:shadowDy="0"
             android:shadowRadius="5"
-            android:src="@drawable/ic_info_white_48dp" />
+            android:src="@drawable/ic_info_white_48dp"
+            android:onClick="informationOnClick"/>
 
         <ImageButton
             android:id="@+id/settings_button"
@@ -110,5 +111,13 @@
         android:text="@string/copyright"
         android:textSize="20sp"
         android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/information_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-100dp"
+        android:text="jdfijagjo"
+        android:textSize="20sp"/>
 
 </LinearLayout>

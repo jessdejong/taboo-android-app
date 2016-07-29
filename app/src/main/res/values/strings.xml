@@ -7,4 +7,5 @@
     <string name="store_icon_content_description">Store</string>
     <string name="information_icon_content_description">Information</string>
     <string name="settings_icon_content_description">Settings</string>
+    <string name="settings_title">Settings</string>
 </resources>
