@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -15,13 +15,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_title"
-        android:textSize="60sp"
-        android:textColor="@color/colorAccent"
-        android:textStyle="italic|bold"
-        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="20dp" />
+        android:layout_marginRight="20dp"
+        android:text="@string/app_title"
+        android:textColor="@color/colorAccent"
+        android:textSize="60sp"
+        android:textStyle="italic|bold" />
 
     <Button
         android:id="@+id/play_button"
@@ -55,20 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <ImageButton
-            android:id="@+id/info_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/circle_button_shape"
-            android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="5"
-            android:src="@drawable/ic_info_white_48dp" />
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/store_button"
@@ -81,6 +69,18 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:src="@drawable/ic_shop_white_48dp" />
+
+        <ImageButton
+            android:id="@+id/info_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/circle_button_shape"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:src="@drawable/ic_info_white_48dp" />
 
         <ImageButton
             android:id="@+id/settings_button"
@@ -100,5 +100,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/copyright"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 </LinearLayout>
