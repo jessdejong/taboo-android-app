@@ -16,7 +16,7 @@ In order to contribute to this android app, follow these few steps:
 3. Import a fork of this repository into Android Studio.
 4. Make changes and merge.
 
-All contributions are welcome!
+All code contributions are welcome!
 
 License
 -------
