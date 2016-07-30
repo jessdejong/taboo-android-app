@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/colorAccent"
-        android:layout_margin="20dp">
+        android:layout_margin="30dp">
     </View>
 
     <Button
@@ -66,12 +66,11 @@
             android:id="@+id/store_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/circle_button_shape"
             android:contentDescription="@string/store_icon_content_description"
             android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
             android:shadowRadius="5"
             android:src="@drawable/ic_shop_white_48dp" />
 
@@ -79,12 +78,11 @@
             android:id="@+id/info_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:background="@drawable/circle_button_shape"
             android:contentDescription="@string/information_icon_content_description"
             android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
             android:shadowRadius="5"
             android:src="@drawable/ic_info_white_48dp"
             android:onClick="informationOnClick"/>
@@ -93,12 +91,11 @@
             android:id="@+id/settings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:background="@drawable/circle_button_shape"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:contentDescription="@string/settings_icon_content_description"
             android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
             android:shadowRadius="5"
             android:src="@drawable/ic_settings_white_48dp"
             android:onClick="settingsOnClick" />
@@ -106,20 +103,20 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/information_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:visibility="invisible"
+        android:text="@string/information_text"
+        android:textSize="20sp"
+        android:gravity="center" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/copyright"
         android:textSize="20sp"
         android:layout_margin="10dp"/>
-
-    <TextView
-        android:id="@+id/information_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:visibility="invisible"
-        android:text="@string/information_text"
-        android:textSize="20sp"
-        android:gravity="center" />
 
 </LinearLayout>
