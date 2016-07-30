@@ -30,18 +30,17 @@ public class MainActivity extends AppCompatActivity {
         animFadeout = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out);
     }
 
-    public void settingsOnClick (View v) {
+    public void settingsOnClick(View v) {
         Intent intent = new Intent(this, SettingsActivity.class);
         startActivity(intent);
     }
 
-    public void informationOnClick (View v) {
+    public void informationOnClick(View v) {
         if (information_text_showing) {
             infoTextView.startAnimation(animFadeout);
             infoTextView.setVisibility(View.INVISIBLE);
             information_text_showing = false;
-        }
-        else {
+        } else {
             infoTextView.startAnimation(animFadein);
             infoTextView.setVisibility(View.VISIBLE);
             information_text_showing = true;
