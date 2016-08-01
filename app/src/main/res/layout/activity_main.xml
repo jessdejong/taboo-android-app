@@ -136,7 +136,10 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/icon_buttons_linear_layout"
         android:background="@color/colorAccent"
-        android:layout_margin="30dp">
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp">
     </View>
 
     <TextView
