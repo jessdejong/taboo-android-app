@@ -59,6 +59,7 @@
         android:text="@string/how_to_play_button_text"
         android:textColor="#FFFFFF"
         android:textSize="30sp" />
+        
     <Button
         android:id="@+id/store_button"
         android:layout_width="wrap_content"
