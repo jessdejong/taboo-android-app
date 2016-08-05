@@ -9,3 +9,5 @@ In order to contribute, follow these few steps:
 2. Download Android Studio and the Android SDK.
 3. Import a fork of this repository into Android Studio.
 4. Make changes and merge.
+
+Copyright © 2016 Jesse DeJong
