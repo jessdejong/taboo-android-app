@@ -1,4 +1,5 @@
 Latest Updates
 ============
 
-- added pre-game settings activity
+* added pre-game settings activity
+* added animations
