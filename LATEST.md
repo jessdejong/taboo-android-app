@@ -1,6 +1,6 @@
 Latest Updates
 ============
 
-* added pre-game settings activity
-* added animations
-* added design lines
+* added pre-game settings activity 8/9/2016
+* added animations 8/10/2016
+* added design lines 8/11/2016
