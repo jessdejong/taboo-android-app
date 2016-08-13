@@ -26,4 +26,4 @@ See [LICENSE.md](LICENSE.md)
 Copyright
 ---------
 
-© 2016 Jesse DeJong
+Copyright © 2016 Jesse DeJong

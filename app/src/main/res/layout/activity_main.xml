@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
     android:background="@color/colorPrimary"
+    android:gravity="center_horizontal"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -26,10 +26,10 @@
         android:id="@+id/line_divider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/title_text_view"
-        android:background="@color/colorAccent"
-        android:layout_margin="30dp">
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:background="@color/colorAccent">
     </View>
 
     <Button
@@ -60,6 +60,7 @@
         android:text="@string/how_to_play_button_text"
         android:textColor="#FFFFFF"
         android:textSize="30sp" />
+        
     <Button
         android:id="@+id/store_button"
         android:layout_width="wrap_content"
@@ -67,18 +68,18 @@
         android:layout_below="@+id/how_to_play_button"
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
-        android:paddingRight="30dp"
-        android:paddingLeft="30dp"
-        android:paddingTop="7dp"
-        android:paddingBottom="7dp"
-        android:text=" Store"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
         android:background="@drawable/main_button_shape"
         android:contentDescription="@string/store_icon_content_description"
+        android:drawableLeft="@drawable/ic_shop_white_48dp"
+        android:paddingBottom="7dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingTop="7dp"
         android:shadowColor="#A8A8A8"
         android:shadowRadius="5"
-        android:drawableLeft="@drawable/ic_shop_white_48dp" />
+        android:text=" Store"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
     <LinearLayout
         android:id="@+id/icon_buttons_linear_layout"
@@ -94,27 +95,26 @@
             android:id="@+id/settings_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/circle_button_shape"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/circle_button_shape"
             android:contentDescription="@string/settings_icon_content_description"
             android:shadowColor="#A8A8A8"
             android:shadowRadius="5"
-            android:src="@drawable/ic_settings_white_48dp"
-            android:onClick="settingsOnClick" />
+            android:src="@drawable/ic_settings_white_48dp" />
 
         <ImageButton
             android:id="@+id/info_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:background="@drawable/circle_button_shape"
             android:contentDescription="@string/information_icon_content_description"
             android:shadowColor="#A8A8A8"
             android:shadowRadius="5"
             android:src="@drawable/ic_info_white_48dp"
-            android:onClick="informationOnClick"/>
+           />
 
     </LinearLayout>
 
@@ -122,35 +122,35 @@
         android:id="@+id/information_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/icon_buttons_linear_layout"
-        android:visibility="invisible"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
         android:text="@string/information_text"
         android:textSize="20sp"
-        android:gravity="center" />
+        android:visibility="invisible" />
 
     <View
         android:id="@+id/line_divider2"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/icon_buttons_linear_layout"
-        android:background="@color/colorAccent"
-        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginLeft="30dp">
+        android:layout_marginTop="40dp"
+        android:background="@color/colorAccent">
     </View>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
         android:text="@string/copyright"
-        android:textSize="20sp"
-        android:layout_margin="10dp"/>
+        android:textSize="20sp"/>
 
 </RelativeLayout>
