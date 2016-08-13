@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(settings);
             }
         });
+    }
 
-<<<<<<< HEAD
     public void playOnClick (View v) {
         Intent intent = new Intent(this, GameSettingsActivity.class);
         startActivity(intent);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             infoTextView.setVisibility(View.VISIBLE);
             information_text_showing = true;
         }
-=======
+
         information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,10 +77,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
->>>>>>> origin/master
     }
-
-
-
 }
