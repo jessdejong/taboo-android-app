@@ -29,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
         infoTextView = (TextView) findViewById(R.id.information_text_view);
         animFadein = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_in);
         animFadeout = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out);
-        ImageButton settings = (ImageButton) findViewById(R.id.settings_button);
+        ImageButton settings = (ImageButton)findViewById(R.id.settings_button);
         ImageButton information = (ImageButton) findViewById(R.id.info_button);
-
+        assert settings != null;
+        assert information != null;
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
             infoTextView.setVisibility(View.VISIBLE);
             information_text_showing = true;
         }
-        infoTextView.setOnClickListener(new View.OnClickListener() {
+
+        information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (information_text_showing) {
