@@ -33,9 +33,13 @@ public class MainActivity extends AppCompatActivity {
         ImageButton settings = (ImageButton)findViewById(R.id.settings_button);
         ImageButton information = (ImageButton) findViewById(R.id.info_button);
         Button play = (Button) findViewById(R.id.play_button);
+        Button how_to_play = (Button) findViewById(R.id.how_to_play_button);
+
         assert play != null;
         assert settings != null;
         assert information != null;
+
+        // settings button clicked
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // info button clicked
         information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,11 +64,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // play button clicked
         play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, GameSettingsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        // how to play button clicked
+        how_to_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Intent intent = new Intent(MainActivity.this, GameSettingsActivity.class);
+                //startActivity(intent);
             }
         });
     }
