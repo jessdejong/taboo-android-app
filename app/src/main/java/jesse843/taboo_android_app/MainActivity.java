@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         animFadeout = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade_out);
         ImageButton settings = (ImageButton)findViewById(R.id.settings_button);
         ImageButton information = (ImageButton) findViewById(R.id.info_button);
+        Button play = (Button) findViewById(R.id.play_button);
+        assert play != null;
         assert settings != null;
         assert information != null;
         settings.setOnClickListener(new View.OnClickListener() {
@@ -40,28 +43,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(settings);
             }
         });
-    }
-
-    public void playOnClick (View v) {
-        Intent intent = new Intent(this, GameSettingsActivity.class);
-        startActivity(intent);
-    }
-
-    public void settingsOnClick (View v) {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
-    }
-
-    public void informationOnClick (View v) {
-        if (information_text_showing) {
-            infoTextView.startAnimation(animFadeout);
-            infoTextView.setVisibility(View.INVISIBLE);
-            information_text_showing = false;
-        } else {
-            infoTextView.startAnimation(animFadein);
-            infoTextView.setVisibility(View.VISIBLE);
-            information_text_showing = true;
-        }
 
         information.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +56,14 @@ public class MainActivity extends AppCompatActivity {
                     infoTextView.setVisibility(View.VISIBLE);
                     information_text_showing = true;
                 }
+            }
+        });
+
+        play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, GameSettingsActivity.class);
+                startActivity(intent);
             }
         });
     }
