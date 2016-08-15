@@ -77,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
         how_to_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Intent intent = new Intent(MainActivity.this, GameSettingsActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, HowToPlayActivity.class);
+                startActivity(intent);
             }
         });
     }
