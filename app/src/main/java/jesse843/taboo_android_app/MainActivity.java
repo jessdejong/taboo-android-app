@@ -34,10 +34,13 @@ public class MainActivity extends AppCompatActivity {
         ImageButton information = (ImageButton) findViewById(R.id.info_button);
         Button play = (Button) findViewById(R.id.play_button);
         Button how_to_play = (Button) findViewById(R.id.how_to_play_button);
+        Button store = (Button) findViewById(R.id.store_button);
 
         assert play != null;
         assert settings != null;
         assert information != null;
+        assert how_to_play != null;
+        assert store != null;
 
         // settings button clicked
         settings.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, HowToPlayActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // store button clicked
+        store.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, StoreActivity.class);
                 startActivity(intent);
             }
         });
