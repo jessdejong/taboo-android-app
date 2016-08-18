@@ -8,3 +8,4 @@ Latest Updates
 * MainActivity.java fixed 8/14/2016
 * added HowToPlayActivity 8/15/2016
 * added StoreActivity 8/15/2016
+* added basic headings to new Activities 8/17/2016
