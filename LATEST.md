@@ -9,4 +9,4 @@ Latest Updates
 * added HowToPlayActivity 8/15/2016
 * added StoreActivity 8/15/2016
 * added basic headings to new activities 8/17/2016
-* added button functioning for new activities 8/17/2016
+* added button functioning for How To Play Activity and Store Activity 8/17/2016
