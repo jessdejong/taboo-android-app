@@ -14,19 +14,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:text="@string/game_settings_title"
         android:layout_centerHorizontal="true"
+        android:text="@string/game_settings_title"
         android:textColor="@color/colorAccent"
         android:textSize="30sp"
         android:textStyle="italic" />
 
     <View
+        android:id="@+id/line_div"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/game_settings_title"
-        android:background="@color/colorAccent"
-        android:layout_margin="30dp">
-    </View>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:background="@color/colorAccent"></View>
+
+    <TextView
+        android:id="@+id/num_rounds_choose_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line_div"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="@string/num_rounds_choose_title_text"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+
+    <SeekBar
+        android:id="@+id/num_rounds_seek_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/num_rounds_choose_title"
+        android:layout_margin="30dp" />
+
+    <TextView
+        android:id="@+id/time_in_round_choose_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/num_rounds_seek_bar"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="@string/time_in_round_choose_title_text"
+        android:textColor="@color/colorAccent"
+        android:textSize="20dp" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/time_in_round_choose_title"
+        android:layout_margin="30dp" />
 
 </RelativeLayout>
