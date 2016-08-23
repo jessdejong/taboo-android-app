@@ -10,3 +10,4 @@ Latest Updates
 * added StoreActivity 8/15/2016
 * added basic headings to new activities 8/17/2016
 * added button functioning for How To Play Activity and Store Activity 8/17/2016
+* added seek bars in GameSettings activity 8/22/2016
