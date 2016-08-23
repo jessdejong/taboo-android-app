@@ -27,7 +27,7 @@
         android:layout_below="@+id/game_settings_title"
         android:layout_centerHorizontal="true"
         android:layout_margin="30dp"
-        android:background="@color/colorAccent"></View>
+        android:background="@color/colorAccent"/>
 
     <TextView
         android:id="@+id/num_rounds_choose_title"
