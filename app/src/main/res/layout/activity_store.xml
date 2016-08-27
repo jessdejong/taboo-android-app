@@ -21,10 +21,11 @@
         android:textStyle="italic" />
 
     <View
+        android:id="@+id/store_line_div_1"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@+id/store_title"
+        android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
         android:layout_margin="30dp">
     </View>
