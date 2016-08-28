@@ -46,7 +46,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/num_rounds_choose_text_view"
         android:layout_margin="30dp"
-        android:max="10"/>
+        android:max="14" />
 
     <TextView
         android:id="@+id/time_in_round_choose_text_view"
@@ -60,9 +60,11 @@
         android:textSize="20dp" />
 
     <SeekBar
+        android:id="@+id/time_in_round_seek_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/time_in_round_choose_title"
-        android:layout_margin="30dp" />
+        android:layout_below="@+id/time_in_round_choose_text_view"
+        android:layout_margin="30dp"
+        android:max="59"/>
 
 </RelativeLayout>

@@ -12,6 +12,6 @@
     <string name="game_settings_title">Game Settings</string>
     <string name="how_to_play_title">How To Play</string>
     <string name="store_title">Store</string>
-    <string name="num_rounds_choose_text">Number of Rounds: 5</string>
-    <string name="time_in_round_choose_text">Seconds Per Round: 30</string>
+    <string name="num_rounds_choose_text">Number of Rounds: </string>
+    <string name="time_in_round_choose_text">Seconds Per Round: </string>
 </resources>
