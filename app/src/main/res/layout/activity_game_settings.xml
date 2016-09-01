@@ -27,7 +27,7 @@
         android:layout_below="@+id/game_settings_title"
         android:layout_centerHorizontal="true"
         android:layout_margin="30dp"
-        android:background="@color/colorAccent"/>
+        android:background="@color/colorAccent" />
 
     <TextView
         android:id="@+id/num_rounds_choose_text_view"
@@ -65,6 +65,71 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/time_in_round_choose_text_view"
         android:layout_margin="30dp"
-        android:max="59"/>
+        android:max="59" />
+
+    <TextView
+        android:id="@+id/choose_team_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/time_in_round_seek_bar"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="@string/choose_team_names_text"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/team_name_1_chooser_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choose_team_name_text_view"
+        android:orientation="horizontal"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/choose_team_name_1_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_team_name_1_text"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/team_name1_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:maxLength="20"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/team_name_2_chooser_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/team_name_1_chooser_layout"
+        android:orientation="horizontal"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
+
+        <TextView
+            android:id="@+id/choose_team_name_2_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_team_name_2_text"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/team_name2_editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:maxLength="20"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
