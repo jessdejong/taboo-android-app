@@ -13,3 +13,4 @@ Latest Updates
 * added seekBars in GameSettings activity 8/22/2016
 * added text to GameSettings activity 8/26/16
 * implemented seekBars in GameSettings activity 8/28/2016
+* added editTexts in GameSettings activity for team names 9/1/2016
