@@ -10,4 +10,4 @@ In order to contribute, follow these few steps:
 3. Import a fork of this repository into Android Studio.
 4. Make changes and merge.
 
-Copyright © 2016 Jesse DeJong
+Copyright © 2016 jesse843
