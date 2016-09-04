@@ -83,11 +83,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/choose_team_name_text_view"
-        android:orientation="horizontal"
-        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp">
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/choose_team_name_1_text_view"
@@ -101,9 +101,9 @@
             android:id="@+id/team_name1_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
+            android:hint="@string/team_1_hint_text"
             android:maxLength="20"
-            android:hint="@string/team_1_hint_text"/>
+            android:maxLines="1" />
 
     </LinearLayout>
 
@@ -112,9 +112,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/team_name_1_chooser_layout"
-        android:orientation="horizontal"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
+        android:layout_marginRight="30dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/choose_team_name_2_text_view"
@@ -128,10 +128,24 @@
             android:id="@+id/team_name2_editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="1"
+            android:hint="@string/team_2_hint_text"
             android:maxLength="20"
-            android:hint="@string/team_2_hint_text"/>
+            android:maxLines="1" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/to_game_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:background="@drawable/main_button_shape"
+        android:shadowColor="#A8A8A8"
+        android:shadowRadius="5"
+        android:text="@string/play_button_text"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
 
 </RelativeLayout>
