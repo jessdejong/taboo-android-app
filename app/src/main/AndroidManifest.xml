@@ -18,7 +18,8 @@
         <activity android:name=".SettingsActivity" />
         <activity android:name=".GameSettingsActivity" />
         <activity android:name=".HowToPlayActivity" />
-        <activity android:name=".StoreActivity"></activity>
+        <activity android:name=".StoreActivity" />
+        <activity android:name=".GameActivity"></activity>
     </application>
 
 </manifest>
