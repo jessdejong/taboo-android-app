@@ -84,8 +84,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/choose_team_name_text_view"
         android:orientation="horizontal"
-        android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp">
 
@@ -102,7 +102,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
-            android:maxLength="20"/>
+            android:maxLength="20"
+            android:hint="@string/team_1_hint_text"/>
 
     </LinearLayout>
 
@@ -112,8 +113,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/team_name_1_chooser_layout"
         android:orientation="horizontal"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp">
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
         <TextView
             android:id="@+id/choose_team_name_2_text_view"
@@ -128,7 +129,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="1"
-            android:maxLength="20"/>
+            android:maxLength="20"
+            android:hint="@string/team_2_hint_text"/>
 
     </LinearLayout>
 
