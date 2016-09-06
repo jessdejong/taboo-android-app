@@ -5,10 +5,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class GameSettingsActivity extends AppCompatActivity {
+
+    public final static String TEAM_ONE_NAME = "jesse843.taboo_android_app.TEAM_ONE_NAME";
+    public final static String TEAM_TWO_NAME = "jesse843.taboo_android_app.TEAM_TWO_NAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,23 @@ public class GameSettingsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GameSettingsActivity.this, GameActivity.class);
+                EditText name1 = (EditText)findViewById(R.id.team_name1_editText);
+                EditText name2 = (EditText)findViewById(R.id.team_name2_editText);
+                String message1 = "";
+                String message2 = "";
+                if (name1.getText().equals(null)) {
+                    message1 = "Team 1";
+                }
+                else {
+                    message1 = name1.getText().toString();
+                }
+                if (name2.getText().equals(null)) {
+                    message2 = "Team 2";
+                }
+                else {
+                    message2 = name2.getText().toString();
+                }
+                intent.putExtra(TEAM_ONE_NAME, message1);
                 startActivity(intent);
             }
         });
