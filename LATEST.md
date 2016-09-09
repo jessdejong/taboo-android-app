@@ -16,3 +16,4 @@ Latest Updates
 * added editTexts in GameSettings Activity for team names 9/1/2016
 * added Game Activity 9/4/2016
 * sending team name 1 and team name 2 to Game activity using intents 9/5/2016
+* getting team names in Game activity 9/8/16
