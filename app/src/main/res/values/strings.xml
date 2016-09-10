@@ -12,11 +12,12 @@
     <string name="game_settings_title">Game Settings</string>
     <string name="how_to_play_title">How To Play</string>
     <string name="store_title">Store</string>
-    <string name="num_rounds_choose_text">Number of Rounds: </string>
-    <string name="time_in_round_choose_text">Seconds Per Round: </string>
+    <string name="num_rounds_choose_text">Number of Rounds:&#160;</string>
+    <string name="time_in_round_choose_text">Seconds Per Round:&#160;</string>
     <string name="choose_team_names_text">Team Names</string>
     <string name="choose_team_name_1_text">Team 1:&#160;</string>
     <string name="choose_team_name_2_text">Team 2:&#160;</string>
     <string name="team_1_hint_text">Team 1</string>
     <string name="team_2_hint_text">Team 2</string>
+    <string name="round_text">Round&#160;</string>
 </resources>

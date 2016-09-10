@@ -7,6 +7,9 @@ import android.os.Bundle;
 public class GameActivity extends AppCompatActivity {
     private String team_name1;
     private String team_name2;
+    private int round_number;
+    // if turn is true then it is team 1's turn, otherwise vice versa.
+    private boolean turn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +17,10 @@ public class GameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game);
 
         Intent intent = getIntent();
+
+        // Initializing Variables
         String team_name1 = intent.getStringExtra(GameSettingsActivity.TEAM_ONE_NAME);
         String team_name2 = intent.getStringExtra(GameSettingsActivity.TEAM_TWO_NAME);
+        round_number = 1;
     }
 }
