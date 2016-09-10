@@ -1,5 +1,5 @@
 Latest Updates
-============
+==============
 
 * added GameSettings activity 8/9/2016
 * added information animations 8/10/2016
