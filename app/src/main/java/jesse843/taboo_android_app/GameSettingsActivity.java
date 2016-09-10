@@ -13,6 +13,8 @@ public class GameSettingsActivity extends AppCompatActivity {
 
     public final static String TEAM_ONE_NAME = "jesse843.taboo_android_app.TEAM_ONE_NAME";
     public final static String TEAM_TWO_NAME = "jesse843.taboo_android_app.TEAM_TWO_NAME";
+    public final static String NUM_ROUNDS = "jesse843.taboo_android_app.NUM_ROUNDS";
+    public final static String SECONDS_PER_ROUND = "jesse843.taboo_android_app.SECONDS_PER_ROUND";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,13 +64,20 @@ public class GameSettingsActivity extends AppCompatActivity {
             }
         });
 
-        // play button clicked
+        // play button clicked: starts Game Activity and sends info to Game Activity
         play_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GameSettingsActivity.this, GameActivity.class);
+
                 EditText name1 = (EditText)findViewById(R.id.team_name1_editText);
                 EditText name2 = (EditText)findViewById(R.id.team_name2_editText);
+                SeekBar numRoundsSeekBar = (SeekBar)findViewById(R.id.num_rounds_seek_bar);
+                SeekBar secondPerRoundSeekBar = (SeekBar)findViewById(R.id.time_in_round_seek_bar);
+
+                int numRoundsProgress = numRoundsSeekBar.getProgress();
+                int secondPerRoundProgress = secondPerRoundSeekBar.getProgress();
+
                 String message1 = "";
                 String message2 = "";
                 if (name1.getText().equals(null)) {
@@ -83,7 +92,12 @@ public class GameSettingsActivity extends AppCompatActivity {
                 else {
                     message2 = name2.getText().toString();
                 }
+
                 intent.putExtra(TEAM_ONE_NAME, message1);
+                intent.putExtra(TEAM_TWO_NAME, message2);
+                intent.putExtra(NUM_ROUNDS, Integer.toString(numRoundsProgress));
+                intent.putExtra(SECONDS_PER_ROUND, Integer.toString(secondPerRoundProgress));
+
                 startActivity(intent);
             }
         });
