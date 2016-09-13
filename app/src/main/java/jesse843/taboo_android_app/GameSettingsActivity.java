@@ -10,7 +10,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 public class GameSettingsActivity extends AppCompatActivity {
-
+    // public messages
     public final static String TEAM_ONE_NAME = "jesse843.taboo_android_app.TEAM_ONE_NAME";
     public final static String TEAM_TWO_NAME = "jesse843.taboo_android_app.TEAM_TWO_NAME";
     public final static String NUM_ROUNDS = "jesse843.taboo_android_app.NUM_ROUNDS";

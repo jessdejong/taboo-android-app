@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
+    // settings info
     private String team_name1;
     private String team_name2;
     private int numRounds;
     private int secondsPerRound;
 
+    // keeps track of rounds
     private int round_number;
+
     // if turn is true then it is team 1's turn, otherwise vice versa.
     private boolean turn;
 
