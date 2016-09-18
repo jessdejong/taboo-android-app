@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:text="Team 1"
+        android:text="@string/team_1_hint_text"
         android:textColor="@color/colorAccent"
         android:textSize="25sp"/>
 
