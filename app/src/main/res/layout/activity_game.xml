@@ -38,4 +38,11 @@
         android:layout_margin="15dp"
         android:background="@color/colorAccent" />
 
+    <LinearLayout
+        android:id="@+id/guess_buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"></LinearLayout>
+
 </RelativeLayout>
