@@ -42,7 +42,50 @@
         android:id="@+id/guess_buttons_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:layout_centerHorizontal="true"
         android:orientation="horizontal"
-        android:layout_alignParentBottom="true"></LinearLayout>
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal">
+
+        <ImageButton
+            android:id="@+id/taboo_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/circle_button_shape"
+            android:contentDescription="@string/taboo_icon_content_description"
+            android:shadowColor="#A8A8A8"
+            android:shadowRadius="5"
+            android:src="@drawable/ic_clear_white_48dp" />
+
+        <ImageButton
+            android:id="@+id/pass_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/circle_button_shape"
+            android:contentDescription="@string/pass_icon_content_description"
+            android:shadowColor="#A8A8A8"
+            android:shadowRadius="5"
+            android:src="@drawable/ic_arrow_forward_white_48dp"
+            />
+
+        <ImageButton
+            android:id="@+id/correct_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/circle_button_shape"
+            android:contentDescription="@string/correct_icon_content_description"
+            android:shadowColor="#A8A8A8"
+            android:shadowRadius="5"
+            android:src="@drawable/ic_done_white_48dp"
+            />
+
+    </LinearLayout>
 
 </RelativeLayout>
