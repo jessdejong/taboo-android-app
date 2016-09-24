@@ -1,8 +1,10 @@
 package jesse843.taboo_android_app;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity {
@@ -36,6 +38,10 @@ public class GameActivity extends AppCompatActivity {
 
         // updating the round number
         updateRoundNum();
+
+        ImageButton pauseButton = (ImageButton)findViewById(R.id.pause_button);
+        int color = Color.parseColor("#C23127"); //The color u want
+        pauseButton.setColorFilter(color);
     }
 
     public void updateRoundNum () {

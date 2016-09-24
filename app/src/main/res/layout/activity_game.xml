@@ -9,6 +9,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="jesse843.taboo_android_app.GameActivity">
 
+    <ImageButton
+        android:id="@+id/pause_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/taboo_icon_content_description"
+        android:shadowColor="#A8A8A8"
+        android:shadowRadius="5"
+        android:src="@drawable/ic_pause_white_48dp" />
+
     <TextView
         android:id="@+id/turn_text_view"
         android:layout_width="wrap_content"
