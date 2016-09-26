@@ -17,3 +17,4 @@ Latest Updates
 * added Game Activity 9/4/2016
 * sending team name 1 and team name 2 to Game activity using intents 9/5/2016
 * getting team names in Game activity 9/8/16
+* added pause button 9/25/16
