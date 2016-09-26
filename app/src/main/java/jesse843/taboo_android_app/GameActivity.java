@@ -42,6 +42,8 @@ public class GameActivity extends AppCompatActivity {
         ImageButton pauseButton = (ImageButton)findViewById(R.id.pause_button);
         int color = Color.parseColor("#C23127"); //The color u want
         pauseButton.setColorFilter(color);
+
+        // open up a pause fragment
     }
 
     public void updateRoundNum () {
