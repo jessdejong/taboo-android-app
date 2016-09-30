@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -33,6 +35,8 @@ public class GameActivity extends AppCompatActivity {
         team_name2 = intent.getStringExtra(GameSettingsActivity.TEAM_TWO_NAME);
         numRounds = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.NUM_ROUNDS));
         secondsPerRound = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.SECONDS_PER_ROUND));
+        ImageButton pause_button = (ImageButton) findViewById(R.id.pause_button);
+
         round_number = 1;
         turn = true;
 
@@ -43,7 +47,14 @@ public class GameActivity extends AppCompatActivity {
         int color = Color.parseColor("#C23127"); //The color u want
         pauseButton.setColorFilter(color);
 
-        // open up a pause fragment
+        // pause_button clicked
+        pause_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GameActivity.this, PauseActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void updateRoundNum () {
