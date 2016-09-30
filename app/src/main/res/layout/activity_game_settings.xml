@@ -102,6 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/team_1_hint_text"
+            android:singleLine="true"
             android:maxLength="20"
             android:maxLines="1" />
 
@@ -130,6 +131,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/team_2_hint_text"
             android:maxLength="20"
+            android:singleLine="true"
             android:maxLines="1" />
 
     </LinearLayout>
