@@ -48,13 +48,13 @@ public class GameActivity extends AppCompatActivity {
         pauseButton.setColorFilter(color);
 
         // pause_button clicked
-        pause_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(GameActivity.this, PauseActivity.class);
-                startActivity(intent);
-            }
-        });
+        //pause_button.setOnClickListener(new View.OnClickListener() {
+        //    @Override
+        //    public void onClick(View view) {
+        //        Intent intent = new Intent(GameActivity.this, PauseActivity.class);
+        //        startActivity(intent);
+        //}
+        //});
     }
 
     public void updateRoundNum () {
