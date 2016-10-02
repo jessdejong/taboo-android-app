@@ -1,0 +1,6 @@
+Computer
+Laptop
+Desktop
+Processor
+Type
+Keyboard
