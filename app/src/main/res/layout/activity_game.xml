@@ -70,26 +70,32 @@
             android:gravity="center"
             android:layout_gravity="center">
             <TextView
+                android:id="@+id/guess_word"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"/>
             <TextView
+                android:id="@+id/taboo_word1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"/>
             <TextView
+                android:id="@+id/taboo_word2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"/>
             <TextView
+                android:id="@+id/taboo_word3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"/>
             <TextView
+                android:id="@+id/taboo_word4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"/>
             <TextView
+                android:id="@+id/taboo_word5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"/>
