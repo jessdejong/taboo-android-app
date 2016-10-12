@@ -22,6 +22,15 @@ public class GameActivity extends AppCompatActivity {
     // if turn is true then it is team 1's turn, otherwise vice versa.
     private boolean turn;
 
+    // card textViews
+    private TextView guess_word_text_view;
+    private TextView taboo_word_1_text_view;
+    private TextView taboo_word_2_text_view;
+    private TextView taboo_word_3_text_view;
+    private TextView taboo_word_4_text_view;
+    private TextView taboo_word_5_text_view;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +45,17 @@ public class GameActivity extends AppCompatActivity {
         numRounds = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.NUM_ROUNDS));
         secondsPerRound = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.SECONDS_PER_ROUND));
         ImageButton pause_button = (ImageButton) findViewById(R.id.pause_button);
-
-        round_number = 1;
+        TextView turn_text_view = (TextView) findViewById(R.id.turn_text_view);
         turn = true;
+        round_number = 1;
+
+        // displaying whos turn
+        if (turn) {
+            turn_text_view.setText(team_name1);
+        }
+        else {
+            turn_text_view.setText(team_name2);
+        }
 
         // updating the round number
         updateRoundNum();
