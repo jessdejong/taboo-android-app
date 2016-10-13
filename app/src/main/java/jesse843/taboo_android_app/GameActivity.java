@@ -9,6 +9,11 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class GameActivity extends AppCompatActivity {
     // settings info
     private String team_name1;
@@ -30,7 +35,7 @@ public class GameActivity extends AppCompatActivity {
     private TextView taboo_word_4_text_view;
     private TextView taboo_word_5_text_view;
 
-
+    private BufferedReader in;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +53,13 @@ public class GameActivity extends AppCompatActivity {
         TextView turn_text_view = (TextView) findViewById(R.id.turn_text_view);
         turn = true;
         round_number = 1;
+
+        try {
+            in = new BufferedReader(new FileReader("taboo_cards.txt"));
+        }
+        catch (FileNotFoundException exception) {
+            System.out.println("");
+        }
 
         // displaying whos turn
         if (turn) {
