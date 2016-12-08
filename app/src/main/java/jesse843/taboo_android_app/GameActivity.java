@@ -2,6 +2,7 @@ package jesse843.taboo_android_app;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +35,9 @@ public class GameActivity extends AppCompatActivity {
     private TextView taboo_word_3_text_view;
     private TextView taboo_word_4_text_view;
     private TextView taboo_word_5_text_view;
+
+    // countDownTimer
+    CountDownTimer roundTimer;
 
     private BufferedReader in;
     @Override
@@ -72,9 +76,13 @@ public class GameActivity extends AppCompatActivity {
         // updating the round number
         updateRoundNum();
 
+        //pause button
         ImageButton pauseButton = (ImageButton)findViewById(R.id.pause_button);
-        int color = Color.parseColor("#C23127"); //The color u want
+        int color = Color.parseColor("#C23127"); // coloring the pause button
         pauseButton.setColorFilter(color);
+
+        //countdown timer
+        startRoundTimer();
 
         // pause_button clicked
         //pause_button.setOnClickListener(new View.OnClickListener() {
@@ -89,5 +97,33 @@ public class GameActivity extends AppCompatActivity {
     public void updateRoundNum () {
         TextView roundNumTextView = (TextView)findViewById(R.id.round_text_view);
         roundNumTextView.setText(getResources().getString(R.string.round_text) + round_number + "/" + numRounds);
+    }
+
+    public void startRoundTimer() {
+        final TextView round_timer_text_view = (TextView)findViewById(R.id.round_timer_text_view);
+        roundTimer = new CountDownTimer(31000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+                round_timer_text_view.setText(""+millisUntilFinished / 1000);
+                //if (timeLeftInGame == 0) {
+                //    round_timer_text_view.setText("Time is out!");
+                    //roundTimer.cancel();
+                //}
+            }
+
+            public void onFinish() {
+                if (!turn) {
+                    round_number = round_number + 1;
+                    if (round_number == numRounds) {
+                        // end game
+                        // finish();
+                    }
+                }
+                //round_timer_text_view.setText("Time Left in Round: 0");
+                roundTimer.cancel();
+                turn = !turn;
+                startRoundTimer();
+            }
+        }.start();
     }
 }

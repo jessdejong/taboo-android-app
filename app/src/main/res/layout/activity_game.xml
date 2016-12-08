@@ -10,6 +10,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="jesse843.taboo_android_app.GameActivity">
 
+    <TextView
+        android:id="@+id/round_timer_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="time_left" />
+
     <ImageButton
         android:id="@+id/pause_button"
         android:layout_width="wrap_content"
@@ -60,7 +70,7 @@
         android:padding="30dp"
         android:layout_margin="30dp"
         app:cardCornerRadius="10dp"
-        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardBackgroundColor="@color/white"
         android:layout_centerHorizontal="true">
         <LinearLayout
             android:layout_width="match_parent"
