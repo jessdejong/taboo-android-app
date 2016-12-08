@@ -40,6 +40,7 @@ public class GameActivity extends AppCompatActivity {
     CountDownTimer roundTimer;
 
     private BufferedReader in;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,16 +54,19 @@ public class GameActivity extends AppCompatActivity {
         team_name2 = intent.getStringExtra(GameSettingsActivity.TEAM_TWO_NAME);
         numRounds = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.NUM_ROUNDS));
         secondsPerRound = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.SECONDS_PER_ROUND));
+
         ImageButton pause_button = (ImageButton) findViewById(R.id.pause_button);
         TextView turn_text_view = (TextView) findViewById(R.id.turn_text_view);
         turn = true;
         round_number = 1;
 
+        // updating the round number
+        updateRoundNum();
+
         try {
             in = new BufferedReader(new FileReader("taboo_cards.txt"));
         }
         catch (FileNotFoundException exception) {
-            System.out.println("");
         }
 
         // displaying whos turn
@@ -73,16 +77,13 @@ public class GameActivity extends AppCompatActivity {
             turn_text_view.setText(team_name2);
         }
 
-        // updating the round number
-        updateRoundNum();
-
         //pause button
         ImageButton pauseButton = (ImageButton)findViewById(R.id.pause_button);
         int color = Color.parseColor("#C23127"); // coloring the pause button
         pauseButton.setColorFilter(color);
 
         //countdown timer
-        startRoundTimer();
+        startRoundTimer(false);
 
         // pause_button clicked
         //pause_button.setOnClickListener(new View.OnClickListener() {
@@ -97,11 +98,19 @@ public class GameActivity extends AppCompatActivity {
     public void updateRoundNum () {
         TextView roundNumTextView = (TextView)findViewById(R.id.round_text_view);
         roundNumTextView.setText(getResources().getString(R.string.round_text) + round_number + "/" + numRounds);
+        round_number++;
     }
 
-    public void startRoundTimer() {
+    public void startRoundTimer(boolean started) {
         final TextView round_timer_text_view = (TextView)findViewById(R.id.round_timer_text_view);
-        roundTimer = new CountDownTimer(31000, 1000) {
+
+        int mills;
+        if (!started)
+            mills = 31000;
+        else
+            mills = 30000;
+
+        roundTimer = new CountDownTimer(mills, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 round_timer_text_view.setText(""+millisUntilFinished / 1000);
@@ -113,7 +122,9 @@ public class GameActivity extends AppCompatActivity {
 
             public void onFinish() {
                 if (!turn) {
-                    round_number = round_number + 1;
+                    //round_number = round_number + 1;
+                    updateRoundNum();
+
                     if (round_number == numRounds) {
                         // end game
                         // finish();
@@ -122,7 +133,7 @@ public class GameActivity extends AppCompatActivity {
                 //round_timer_text_view.setText("Time Left in Round: 0");
                 roundTimer.cancel();
                 turn = !turn;
-                startRoundTimer();
+                startRoundTimer(true);
             }
         }.start();
     }
