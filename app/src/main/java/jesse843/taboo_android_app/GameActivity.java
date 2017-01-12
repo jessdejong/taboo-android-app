@@ -14,6 +14,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity {
     // settings info
@@ -136,5 +137,16 @@ public class GameActivity extends AppCompatActivity {
                 startRoundTimer(true);
             }
         }.start();
+    }
+    public ArrayList<ArrayList<String>> getCards () throws IOException{
+        BufferedReader br = new BufferedReader(new FileReader("taboo_cards.txt"));
+        ArrayList<ArrayList<String>> out = new ArrayList<ArrayList<String>>();
+
+        int index = 0;
+        while (br.ready()) {
+            out.get(index/5).add(br.readLine());
+            index++;
+        }
+        return out;
     }
 }
