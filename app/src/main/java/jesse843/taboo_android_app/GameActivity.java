@@ -40,6 +40,9 @@ public class GameActivity extends AppCompatActivity {
     // countDownTimer
     CountDownTimer roundTimer;
 
+    // cards
+    ArrayList<ArrayList<String>> cards;
+
     private BufferedReader in;
 
     @Override
@@ -55,6 +58,17 @@ public class GameActivity extends AppCompatActivity {
         team_name2 = intent.getStringExtra(GameSettingsActivity.TEAM_TWO_NAME);
         numRounds = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.NUM_ROUNDS));
         secondsPerRound = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.SECONDS_PER_ROUND));
+
+
+
+        // getting cards from text file
+        try {
+            cards = getCards();
+        }
+        catch (Exception IOException) {
+            System.out.println("IOException");
+        }
+        // update the card visual
 
         ImageButton pause_button = (ImageButton) findViewById(R.id.pause_button);
         TextView turn_text_view = (TextView) findViewById(R.id.turn_text_view);
@@ -138,7 +152,7 @@ public class GameActivity extends AppCompatActivity {
             }
         }.start();
     }
-    public ArrayList<ArrayList<String>> getCards () throws IOException{
+    public ArrayList<ArrayList<String>> getCards() throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("taboo_cards.txt"));
         ArrayList<ArrayList<String>> out = new ArrayList<ArrayList<String>>();
 
