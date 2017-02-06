@@ -5,16 +5,23 @@ import android.graphics.Color;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class GameActivity extends AppCompatActivity {
     // settings info
@@ -42,6 +49,8 @@ public class GameActivity extends AppCompatActivity {
 
     // cards
     ArrayList<ArrayList<String>> cards;
+    // card Indexes that have been shown
+    private boolean[] cardsShown;
 
     private BufferedReader in;
 
@@ -59,16 +68,16 @@ public class GameActivity extends AppCompatActivity {
         numRounds = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.NUM_ROUNDS));
         secondsPerRound = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.SECONDS_PER_ROUND));
 
-
-
         // getting cards from text file
         try {
             cards = getCards();
         }
         catch (Exception IOException) {
-            System.out.println("IOException");
         }
+        cardsShown = new boolean[cards.size()];
+
         // update the card visual
+        updateCard();
 
         ImageButton pause_button = (ImageButton) findViewById(R.id.pause_button);
         TextView turn_text_view = (TextView) findViewById(R.id.turn_text_view);
@@ -108,6 +117,56 @@ public class GameActivity extends AppCompatActivity {
         //        startActivity(intent);
         //}
         //});
+    }
+
+    public void updateCard () {
+        boolean doneAllCards = doneAllCards();
+        // if done all cards start over
+        if (doneAllCards)
+            Arrays.fill(cardsShown, Boolean.FALSE);
+
+        // select random cart group
+        int randomCardIndex = (int)Math.random()*cards.size();
+
+        // go through the cards to find the first index at which the card group has not been used
+        while (cardsShown[randomCardIndex]) {
+            randomCardIndex++;
+            if (randomCardIndex == cardsShown.length) {
+                randomCardIndex -= cardsShown.length;
+            }
+        }
+
+        // set the card as used
+        cardsShown[randomCardIndex] = false;
+
+        // show the card
+
+        TextView cardTitleTextView = (TextView)findViewById(R.id.guess_word);
+        cardTitleTextView.setText(cards.get(randomCardIndex).get(0));
+
+        TextView tabooWord1TextView = (TextView)findViewById(R.id.taboo_word1);
+        tabooWord1TextView.setText(cards.get(randomCardIndex).get(1));
+
+        TextView tabooWord2TextView = (TextView)findViewById(R.id.taboo_word2);
+        tabooWord2TextView.setText(cards.get(randomCardIndex).get(2));
+
+        TextView tabooWord3TextView = (TextView)findViewById(R.id.taboo_word3);
+        tabooWord3TextView.setText(cards.get(randomCardIndex).get(3));
+
+        TextView tabooWord4TextView = (TextView)findViewById(R.id.taboo_word4);
+        tabooWord4TextView.setText(cards.get(randomCardIndex).get(4));
+
+        TextView tabooWord5TextView = (TextView)findViewById(R.id.taboo_word5);
+        tabooWord5TextView.setText(cards.get(randomCardIndex).get(5));
+    }
+
+    public boolean doneAllCards () {
+        for (int i = 0; i < cardsShown.length; i++) {
+            if (cardsShown[i] == true) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void updateRoundNum () {
@@ -153,14 +212,23 @@ public class GameActivity extends AppCompatActivity {
         }.start();
     }
     public ArrayList<ArrayList<String>> getCards() throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("taboo_cards.txt"));
+        InputStream is = this.getResources().openRawResource(R.raw.taboo_cards);
+        BufferedReader s = new BufferedReader(new InputStreamReader(is));
+       // Scanner s = new Scanner(file);
         ArrayList<ArrayList<String>> out = new ArrayList<ArrayList<String>>();
 
         int index = 0;
-        while (br.ready()) {
-            out.get(index/5).add(br.readLine());
+        while (s.ready()) {
+            ArrayList<String> textList = new ArrayList<String>();
+            out.add(textList);
+            for (int i = 0; i < 6; i++) {
+                out.get(index).add(s.readLine());
+            }
             index++;
         }
+        is.close();
+        s.close();
+        Log.d("YOYOYO", "here");
         return out;
     }
 }
