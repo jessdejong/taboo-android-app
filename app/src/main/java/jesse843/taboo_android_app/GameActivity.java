@@ -30,6 +30,12 @@ public class GameActivity extends AppCompatActivity {
     private int numRounds;
     private int secondsPerRound;
 
+    // scores
+    private int team_one_score;
+    private int team_two_score;
+    private int team_one_round_score;
+    private int team_two_round_score;
+
     // keeps track of rounds
     private int round_number;
 
@@ -68,6 +74,22 @@ public class GameActivity extends AppCompatActivity {
         numRounds = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.NUM_ROUNDS));
         secondsPerRound = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.SECONDS_PER_ROUND));
 
+        team_one_score = 0;
+        team_two_score = 0;
+        team_one_round_score = 0;
+        team_two_round_score = 0;
+
+
+        // initialize game buttons
+        ImageButton taboo_button = (ImageButton) findViewById(R.id.taboo_button);
+        ImageButton correct_button = (ImageButton) findViewById(R.id.correct_button);
+        ImageButton pass_button = (ImageButton) findViewById(R.id.pass_button);
+
+        assert taboo_button != null;
+        assert correct_button != null;
+        assert pass_button != null;
+
+
         // getting cards from text file
         try {
             cards = getCards();
@@ -86,6 +108,9 @@ public class GameActivity extends AppCompatActivity {
 
         // updating the round number
         updateRoundNum();
+
+        // update the score
+        updateScores();
 
         try {
             in = new BufferedReader(new FileReader("taboo_cards.txt"));
@@ -117,6 +142,73 @@ public class GameActivity extends AppCompatActivity {
         //        startActivity(intent);
         //}
         //});
+
+
+        // game buttons!!!
+        // correct button
+        correct_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // update score
+                if (turn) {
+                    team_one_score++;
+                    team_one_round_score++;
+                }
+                else {
+                    team_two_score++;
+                    team_two_round_score++;
+                }
+                updateCard();
+                updateScores();
+            }
+        });
+        // taboo button
+        taboo_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // update score
+                if (turn) {
+                    team_one_score--;
+                    team_one_round_score--;
+                }
+                else {
+                    team_two_score--;
+                    team_two_round_score--;
+                }
+                updateScores();
+                updateCard();
+            }
+        });
+        // pass button
+        pass_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateCard();
+            }
+        });
+    }
+
+    public void updateScores () {
+        TextView total_score_text_view = (TextView)findViewById(R.id.total_score_text_view);
+        TextView round_score_text_view = (TextView)findViewById(R.id.round_score_text_view);
+        if (turn) {
+            total_score_text_view.setText("" + team_one_score);
+            if (team_one_round_score > 0) {
+                round_score_text_view.setText("+" + team_one_round_score);
+            }
+            else {
+                round_score_text_view.setText("" + team_one_round_score);
+            }
+        }
+        else {
+            total_score_text_view.setText("" + team_two_score);
+            if (team_two_round_score > 0) {
+                round_score_text_view.setText("+" + team_two_round_score);
+            }
+            else {
+                round_score_text_view.setText("" + team_two_round_score);
+            }
+        }
     }
 
     public void updateCard () {
@@ -180,9 +272,9 @@ public class GameActivity extends AppCompatActivity {
 
         int mills;
         if (!started)
-            mills = 31000;
+            mills = secondsPerRound*1000+1000;
         else
-            mills = 30000;
+            mills = secondsPerRound*1000;
 
         roundTimer = new CountDownTimer(mills, 1000) {
 
@@ -208,6 +300,8 @@ public class GameActivity extends AppCompatActivity {
                 roundTimer.cancel();
                 turn = !turn;
                 startRoundTimer(true);
+                team_one_round_score = 0;
+                team_two_round_score = 0;
             }
         }.start();
     }

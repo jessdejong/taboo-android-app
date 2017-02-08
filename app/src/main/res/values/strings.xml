@@ -3,7 +3,7 @@
     <string name="app_title">TABOO</string>
     <string name="play_button_text">PLAY</string>
     <string name="how_to_play_button_text">HOW TO PLAY</string>
-    <string name="copyright">© 2016 Jesse DeJong</string>
+    <string name="copyright">© 2016 Jess DeJong</string>
     <string name="store_icon_content_description">Store</string>
     <string name="information_icon_content_description">Information</string>
     <string name="settings_icon_content_description">Settings</string>
@@ -23,4 +23,6 @@
     <string name="team_1_hint_text">Team 1</string>
     <string name="team_2_hint_text">Team 2</string>
     <string name="round_text">Round&#160;</string>
+    <string name="total_score_descr">Total Score</string>
+    <string name="round_score_descr">Round Score</string>
 </resources>
