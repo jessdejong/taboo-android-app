@@ -11,7 +11,7 @@
     <string name="pass_icon_content_description">Pass</string>
     <string name="correct_icon_content_description">Correct</string>
     <string name="settings_title">Settings</string>
-    <string name="information_text">This app is currently being developed in Richardson Texas. The source code for this app is available at <a href="https://github.com/jesse843">https://github.com/jesse843</a>.</string>
+    <string name="information_text"></string>
     <string name="game_settings_title">Game Settings</string>
     <string name="how_to_play_title">How To Play</string>
     <string name="store_title">Store</string>
