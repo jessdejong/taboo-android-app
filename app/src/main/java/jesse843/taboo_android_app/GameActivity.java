@@ -120,10 +120,18 @@ public class GameActivity extends AppCompatActivity {
 
         // displaying whos turn
         if (turn) {
-            turn_text_view.setText(team_name1);
+            if (team_name1.equals("")) {
+                turn_text_view.setText("Team 1");
+            }
+            else
+                turn_text_view.setText(team_name1);
         }
         else {
-            turn_text_view.setText(team_name2);
+            if (team_name2.equals("")) {
+                turn_text_view.setText("Team 2");
+            }
+            else
+                turn_text_view.setText(team_name2);
         }
 
         //pause button
@@ -135,13 +143,13 @@ public class GameActivity extends AppCompatActivity {
         startRoundTimer(false);
 
         // pause_button clicked
-        //pause_button.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-        //    public void onClick(View view) {
-        //        Intent intent = new Intent(GameActivity.this, PauseActivity.class);
-        //        startActivity(intent);
-        //}
-        //});
+        pause_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GameActivity.this, PauseActivity.class);
+                startActivity(intent);
+        }
+        });
 
 
         // game buttons!!!
@@ -218,7 +226,8 @@ public class GameActivity extends AppCompatActivity {
             Arrays.fill(cardsShown, Boolean.FALSE);
 
         // select random cart group
-        int randomCardIndex = (int)Math.random()*cards.size();
+        int randomCardIndex = (int)(Math.random()*cards.size());
+        Log.d("abcabc", ""+randomCardIndex);
 
         // go through the cards to find the first index at which the card group has not been used
         while (cardsShown[randomCardIndex]) {
@@ -313,6 +322,7 @@ public class GameActivity extends AppCompatActivity {
 
         int index = 0;
         while (s.ready()) {
+            s.readLine();
             ArrayList<String> textList = new ArrayList<String>();
             out.add(textList);
             for (int i = 0; i < 6; i++) {

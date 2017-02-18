@@ -20,6 +20,7 @@
         <activity android:name=".HowToPlayActivity" />
         <activity android:name=".StoreActivity" />
         <activity android:name=".GameActivity" />
+        <activity android:name=".PauseActivity"></activity>
     </application>
 
 </manifest>

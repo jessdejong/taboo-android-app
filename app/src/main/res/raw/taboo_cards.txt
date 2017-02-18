@@ -1,12 +1,21 @@
+
 Computer
 Laptop
 Desktop
 Processor
 Type
 Keyboard
+
 Steve Jobs
 Cancer
 Apple
 iPhone
 Mac
 iOS
+
+Phone
+Device
+Computer
+Call
+Text
+Android

@@ -25,4 +25,5 @@
     <string name="round_text">Round&#160;</string>
     <string name="total_score_descr">Total Score</string>
     <string name="round_score_descr">Round Score</string>
+    <string name="pause_title">PAUSE</string>
 </resources>
