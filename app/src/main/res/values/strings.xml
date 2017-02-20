@@ -26,4 +26,6 @@
     <string name="total_score_descr">Total Score</string>
     <string name="round_score_descr">Round Score</string>
     <string name="pause_title">PAUSE</string>
+    <string name="resume_text">Resume Game</string>
+    <string name="home_text">HOME</string>
 </resources>

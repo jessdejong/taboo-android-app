@@ -1,5 +1,6 @@
 package jesse843.taboo_android_app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.CountDownTimer;
@@ -58,6 +59,10 @@ public class GameActivity extends AppCompatActivity {
     // card Indexes that have been shown
     private boolean[] cardsShown;
 
+    // boolean which checks if paused
+    private boolean paused;
+    private int pauseValue;
+
     private BufferedReader in;
 
     @Override
@@ -73,6 +78,8 @@ public class GameActivity extends AppCompatActivity {
         team_name2 = intent.getStringExtra(GameSettingsActivity.TEAM_TWO_NAME);
         numRounds = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.NUM_ROUNDS));
         secondsPerRound = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.SECONDS_PER_ROUND));
+        paused = false;
+        pauseValue = 0;
 
         team_one_score = 0;
         team_two_score = 0;
@@ -147,7 +154,8 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(GameActivity.this, PauseActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 1);
+                paused = true;
         }
         });
 
@@ -194,6 +202,15 @@ public class GameActivity extends AppCompatActivity {
                 updateCard();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 1) {
+            if (resultCode == Activity.RESULT_CANCELED) {
+                paused = false;
+            }
+        }
     }
 
     public void updateScores () {
@@ -288,7 +305,10 @@ public class GameActivity extends AppCompatActivity {
         roundTimer = new CountDownTimer(mills, 1000) {
 
             public void onTick(long millisUntilFinished) {
-                round_timer_text_view.setText(""+millisUntilFinished / 1000);
+                if (paused) {
+                    pauseValue += 1000;
+                }
+                round_timer_text_view.setText(""+(millisUntilFinished+pauseValue) / 1000);
                 //if (timeLeftInGame == 0) {
                 //    round_timer_text_view.setText("Time is out!");
                     //roundTimer.cancel();
