@@ -25,6 +25,13 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class GameActivity extends AppCompatActivity {
+    // intent value tags
+    public final static String TEAM_ONE_NAME = "jesse843.taboo_android_app.TEAM_ONE_NAME";
+    public final static String TEAM_TWO_NAME = "jesse843.taboo_android_app.TEAM_TWO_NAME";
+    public final static String TEAM_ONE_SCORE = "jesse843.taboo_android_app.TEAM_ONE_SCORE";
+    public final static String TEAM_TWO_SCORE = "jesse843.taboo_android_app.TEAM_TWO_SCORE";
+    public final static String TURN = "jesse843.taboo_android_app.TURN";
+
     // settings info
     private String team_name1;
     private String team_name2;
@@ -63,6 +70,9 @@ public class GameActivity extends AppCompatActivity {
     private boolean paused;
     private int pauseValue;
 
+    // boolean value to see whether turn should be going after round has ended
+    boolean startTurn;
+
     private BufferedReader in;
 
     @Override
@@ -78,6 +88,7 @@ public class GameActivity extends AppCompatActivity {
         team_name2 = intent.getStringExtra(GameSettingsActivity.TEAM_TWO_NAME);
         numRounds = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.NUM_ROUNDS));
         secondsPerRound = Integer.parseInt(intent.getStringExtra(GameSettingsActivity.SECONDS_PER_ROUND));
+        startTurn = true;
         paused = false;
         pauseValue = 0;
 
@@ -212,10 +223,16 @@ public class GameActivity extends AppCompatActivity {
                 paused = false;
             }
         }
+        if (requestCode == 2) {
+            if (resultCode == Activity.RESULT_CANCELED) {
+                startTurn = true;
+                startRoundTimer(true);
+            }
+        }
     }
 
     public void displayTeamTurn (boolean t) {
-        // displaying whos turn
+        // displaying who's turn
         TextView turn_text_view = (TextView) findViewById(R.id.turn_text_view);
         if (turn) {
             if (team_name1.equals("")) {
@@ -340,7 +357,15 @@ public class GameActivity extends AppCompatActivity {
                     //round_number = round_number + 1;
                     updateRoundNum();
 
-                    if (round_number == numRounds) {
+                    if (round_number == numRounds+1) {
+                        Intent intent = new Intent(GameActivity.this, GameFinishActivity.class);
+
+                        intent.putExtra(TEAM_ONE_SCORE, team_one_score);
+                        intent.putExtra(TEAM_TWO_SCORE, team_two_score);
+                        intent.putExtra(TEAM_ONE_NAME, team_name1);
+                        intent.putExtra(TEAM_TWO_NAME, team_name2);
+
+                        startActivity(intent);
                         // end game
                         // finish();
                     }
@@ -348,8 +373,23 @@ public class GameActivity extends AppCompatActivity {
                 //round_timer_text_view.setText("Time Left in Round: 0");
                 roundTimer.cancel();
                 turn = !turn;
+
+                // make sure activity isn't running in background
+                startTurn = false;
+
+                // start EndOfRoundActivity
+                Intent i = new Intent(GameActivity.this, EndOfRoundActivity.class);
+                i.putExtra(TEAM_ONE_NAME, team_name1);
+                i.putExtra(TEAM_TWO_NAME, team_name2);
+                i.putExtra(TEAM_ONE_SCORE, team_one_score);
+                i.putExtra(TEAM_TWO_SCORE, team_two_score);
+                i.putExtra(TURN, turn);
+                startActivityForResult(i,2);
+
+                if (startTurn) {
+                    startRoundTimer(true);
+                }
                 displayTeamTurn(turn);
-                startRoundTimer(true);
                 team_one_round_score = 0;
                 team_two_round_score = 0;
             }
@@ -373,7 +413,6 @@ public class GameActivity extends AppCompatActivity {
         }
         is.close();
         s.close();
-        Log.d("YOYOYO", "here");
         return out;
     }
 }

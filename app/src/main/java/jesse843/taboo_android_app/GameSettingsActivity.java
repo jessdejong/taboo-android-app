@@ -30,11 +30,11 @@ public class GameSettingsActivity extends AppCompatActivity {
 
         assert play_button != null;
 
-        numRoundsSeekBar.setProgress(5);
-        numRoundsTextView.setText(getResources().getString(R.string.num_rounds_choose_text) + " " + numRoundsSeekBar.getProgress());
+        numRoundsSeekBar.setProgress(4);
+        numRoundsTextView.setText(getResources().getString(R.string.num_rounds_choose_text) + " " + (numRoundsSeekBar.getProgress()+1));
 
-        timeInRoundSeekBar.setProgress(60);
-        timeInRoundTextView.setText(getResources().getString(R.string.time_in_round_choose_text) + " " + timeInRoundSeekBar.getProgress());
+        timeInRoundSeekBar.setProgress(45);
+        timeInRoundTextView.setText(getResources().getString(R.string.time_in_round_choose_text) + " " + (timeInRoundSeekBar.getProgress()+15));
 
         // numRoundsSeekBar setOnSeekBarChangeListener
         numRoundsSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -95,7 +95,7 @@ public class GameSettingsActivity extends AppCompatActivity {
 
                 intent.putExtra(TEAM_ONE_NAME, message1);
                 intent.putExtra(TEAM_TWO_NAME, message2);
-                intent.putExtra(NUM_ROUNDS, Integer.toString(numRoundsProgress));
+                intent.putExtra(NUM_ROUNDS, Integer.toString(numRoundsProgress+1));
                 intent.putExtra(SECONDS_PER_ROUND, Integer.toString(secondPerRoundProgress+15));
 
                 startActivity(intent);

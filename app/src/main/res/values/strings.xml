@@ -28,4 +28,5 @@
     <string name="pause_title">PAUSE</string>
     <string name="resume_text">Resume Game</string>
     <string name="home_text">HOME</string>
+    <string name="start_turn_text">Start Turn</string>
 </resources>
