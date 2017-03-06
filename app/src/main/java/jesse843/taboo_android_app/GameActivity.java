@@ -111,6 +111,7 @@ public class GameActivity extends AppCompatActivity {
         ImageButton pause_button = (ImageButton) findViewById(R.id.pause_button);
         TextView turn_text_view = (TextView) findViewById(R.id.turn_text_view);
         turn = true;
+        displayTeamTurn(turn);
         round_number = 1;
 
         // updating the round number
@@ -210,6 +211,25 @@ public class GameActivity extends AppCompatActivity {
             if (resultCode == Activity.RESULT_CANCELED) {
                 paused = false;
             }
+        }
+    }
+
+    public void displayTeamTurn (boolean t) {
+        // displaying whos turn
+        TextView turn_text_view = (TextView) findViewById(R.id.turn_text_view);
+        if (turn) {
+            if (team_name1.equals("")) {
+                turn_text_view.setText("Team 1");
+            }
+            else
+                turn_text_view.setText(team_name1);
+        }
+        else {
+            if (team_name2.equals("")) {
+                turn_text_view.setText("Team 2");
+            }
+            else
+                turn_text_view.setText(team_name2);
         }
     }
 
@@ -328,6 +348,7 @@ public class GameActivity extends AppCompatActivity {
                 //round_timer_text_view.setText("Time Left in Round: 0");
                 roundTimer.cancel();
                 turn = !turn;
+                displayTeamTurn(turn);
                 startRoundTimer(true);
                 team_one_round_score = 0;
                 team_two_round_score = 0;

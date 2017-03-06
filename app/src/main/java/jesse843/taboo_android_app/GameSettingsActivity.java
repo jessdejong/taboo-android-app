@@ -33,7 +33,7 @@ public class GameSettingsActivity extends AppCompatActivity {
         numRoundsSeekBar.setProgress(5);
         numRoundsTextView.setText(getResources().getString(R.string.num_rounds_choose_text) + " " + numRoundsSeekBar.getProgress());
 
-        timeInRoundSeekBar.setProgress(30);
+        timeInRoundSeekBar.setProgress(60);
         timeInRoundTextView.setText(getResources().getString(R.string.time_in_round_choose_text) + " " + timeInRoundSeekBar.getProgress());
 
         // numRoundsSeekBar setOnSeekBarChangeListener
@@ -54,7 +54,7 @@ public class GameSettingsActivity extends AppCompatActivity {
         timeInRoundSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                timeInRoundTextView.setText(getResources().getString(R.string.time_in_round_choose_text) + " " + (progress+1));
+                timeInRoundTextView.setText(getResources().getString(R.string.time_in_round_choose_text) + " " + (progress+15));
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
@@ -96,7 +96,7 @@ public class GameSettingsActivity extends AppCompatActivity {
                 intent.putExtra(TEAM_ONE_NAME, message1);
                 intent.putExtra(TEAM_TWO_NAME, message2);
                 intent.putExtra(NUM_ROUNDS, Integer.toString(numRoundsProgress));
-                intent.putExtra(SECONDS_PER_ROUND, Integer.toString(secondPerRoundProgress));
+                intent.putExtra(SECONDS_PER_ROUND, Integer.toString(secondPerRoundProgress+15));
 
                 startActivity(intent);
             }

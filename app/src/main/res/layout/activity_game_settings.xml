@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/time_in_round_choose_text_view"
         android:layout_margin="30dp"
-        android:max="59" />
+        android:max="115" />
 
     <TextView
         android:id="@+id/choose_team_name_text_view"

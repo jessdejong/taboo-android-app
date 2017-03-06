@@ -20,8 +20,9 @@
         <activity android:name=".HowToPlayActivity" />
         <activity android:name=".StoreActivity" />
         <activity android:name=".GameActivity" />
-        <activity android:name=".PauseActivity">
-        </activity>
+        <activity android:name=".PauseActivity" />
+        <activity android:name=".EndOfRoundActivity" />
+        <activity android:name=".GameFinishActivity"></activity>
     </application>
 
 </manifest>
