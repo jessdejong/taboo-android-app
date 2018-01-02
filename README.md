@@ -1,4 +1,4 @@
-Taboo Android App
+Taboo Android App (WIP)
 ========================
 
 What is it?
